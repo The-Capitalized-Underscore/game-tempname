@@ -1,0 +1,17 @@
+game: main.o menu.o menu_GameMenu.o
+	g++ main.o menu.o menu_GameMenu.o -o game
+
+main.o: main.cpp menus/menu_Framework.h
+	g++ -Imenus -c main.cpp
+
+menu.o: menus/menu_Framework.cpp menus/menu_Framework.h
+	g++ -Imenus -c menu_Framework.cpp
+
+menu_GameMenu.o: menus/menu_GameMenu.cpp menus/menu_Framework.h
+	g++ -Imenus -c menu_GameMenu.cpp
+
+run: game
+	./game
+
+clean:
+	rm *.o game
