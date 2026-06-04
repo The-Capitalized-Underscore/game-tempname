@@ -18,27 +18,29 @@ Menu::Menu(const std::string& title) : title(title) {} //end constructor
 	} //end void run
 
 
-	void Menu::display() const {
-		std::cout << "\n" << title << "\n";
-		for (int i = 0; i < (int)options.size(); i++)
-		    std::cout << i + 1 << ") " << options[i].label << "\n";
-		std::cout << "> ";
-		std::cout.flush(); // make sure prompt appears before blocking on cin
-	} //end void display
+void Menu::display() const {
+    std::cout << "\n" << title << "\n";
+    for (int i = 0; i < (int)options.size() - 1; i++)
+        std::cout << i + 1 << ") " << options[i].label << "\n";
+    std::cout << "0) " << options.back().label << "\n";  // last option always shown as 0
+    std::cout << "> ";
+    std::cout.flush();
+}
 
-
-	int Menu::getInput() const {
-		int choice;
-		if(!(std::cin >> choice)) { //check numeric input
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //discard everything up to and including the next newline
-			std::cout << "Invalid input...";
-			return -1;
-		} //end if
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		if(choice >= 1 && choice <= (int)options.size())
-			return choice;
-		std::cout << "Invalid input...\n";
-		return -1;
-	}; //end int getInput
+int Menu::getInput() const {
+    int choice;
+    if (!(std::cin >> choice)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input...\n";
+        return -1;
+    }
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    if (choice == 0)
+        return (int)options.size();  // map 0 to the last option's index
+    if (choice >= 1 && choice <= (int)options.size() - 1)
+        return choice;
+    std::cout << "Invalid input...\n";
+    return -1;
+}
 
