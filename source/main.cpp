@@ -6,7 +6,7 @@ int main() {
 	std::cout << "main()"; //***DEBUG
     Menu mmain("===MAIN MENU===");
     mmain.add("New Game",  []() { showGameMenu(); });
-    mmain.add("Continue",  []() { /* loadGame()  */ });
+    mmain.add("Continue",  []() { showGameMenu(); });
     mmain.add("Quit",      []() { exit(0); });
     
     while (true)
