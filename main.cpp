@@ -9,7 +9,7 @@ void showPartyMenu() {
     party.add("Manage supplies",    []() { /* ... */ });
     party.add("Check morale",       []() { /* ... */ });
     party.add("Dismiss member",     []() { /* ... */ });
-    party.add("Back",               [&keepGoing]() { keepGoing = false; });
+    party.add("Back",               [&keepGoing]() { keepGoing = false; }); //lambdas --> anonymous inline functions
     
 	while(keepGoing) {
 		party.run(); //run once, then check keepGoing
