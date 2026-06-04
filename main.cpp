@@ -17,8 +17,8 @@ void showPartyMenu() {
 } //end showPartyMenu
 
 int main() {
-	std::cout << "main()";
-    Menu mmain("MAIN MENU");
+	std::cout << "main()"; //***DEBUG
+    Menu mmain("===MAIN MENU===");
     mmain.add("New Game",  []() { showPartyMenu(); });
     mmain.add("Continue",  []() { /* loadGame()  */ });
     mmain.add("Quit",      []() { exit(0); });
