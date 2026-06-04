@@ -1,8 +1,11 @@
-main.o: main.cpp
+game: main.o menu.o
+	g++ main.o menu.o -o game
+
+main.o: main.cpp menu.h
 	g++ -c main.cpp
 
-game: main.o
-	g++ main.o -o game
+menu.o: menu.cpp menu.h
+	g++ -c menu.cpp
 
 run: game
 	./game
