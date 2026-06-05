@@ -1,6 +1,7 @@
 #ifndef MENU_H_EXISTS
 #define MENU_H_EXISTS
 
+#pragma once
 #include <string>
 #include <vector>
 #include <functional>

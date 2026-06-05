@@ -14,7 +14,7 @@ Menu::Menu(const std::string& title) : title(title) {} //end constructor
 	        display();
 	        choice = getInput();
 	    } //end while
-	    options[choice - 1].action();
+	    options[choice - 1].action();	
 	} //end void run
 
 
