@@ -1,27 +1,33 @@
 #ifndef MENU_H_EXISTS
 #define MENU_H_EXISTS
 
-#pragma once
+#include <string>
 
 class character_stats {
 public:
-	void setBase(float newBase);
-	float getBase();
+	character_stats(const std::string& label = "Unnamed", 
+			double base = 1.0, 
+			double current = 2.0, 
+			double max = 3.0);
 
-	void setCurrent(float newCurrent);
-	float getCurrent()
+	void setBase(double newBase);
+	double getBase();
 
-	void setMax(float newMax);
-	float getMax();
+	void setCurrent(double newCurrent);
+	double getCurrent();
 
-	void increase(float amount);
-	void decrease(float amount);
+	void setMax(double newMax);
+	double getMax();
 
+	void increase(double amount);
+	void decrease(double amount);
+
+	void display(); //debugging
 private:
-	float base;
-	float current;
-	float max;
-
+	double base;
+	double current;
+	double max;
+	std::string label;
 };
 
 #endif
