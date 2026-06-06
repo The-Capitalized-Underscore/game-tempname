@@ -4,10 +4,6 @@
 #pragma once
 
 class character_stats {
-	float base;
-	float current;
-	float max;
-
 public:
 	void setBase(float newBase);
 	float getBase();
@@ -22,8 +18,9 @@ public:
 	void decrease(float amount);
 
 private:
-	
-
+	float base;
+	float current;
+	float max;
 
 };
 
