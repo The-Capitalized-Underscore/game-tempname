@@ -9,8 +9,9 @@ int main() {
     mmain.add("Continue",  []() { showGameMenu(); });
     mmain.add("Quit",      []() { exit(0); });
     
-    while (true)
+    while (true) {
         mmain.run();
+	} //end while
 
     return 0;
 } //end main

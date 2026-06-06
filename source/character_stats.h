@@ -4,6 +4,13 @@
 #include <string>
 
 class character_stats {
+private:
+	double base;
+	double current;
+	double max;
+	std::string label;
+
+
 public:
 	character_stats(const std::string& label = "Unnamed", 
 			double base = 1.0, 
@@ -23,11 +30,6 @@ public:
 	void decrease(double amount);
 
 	void display(); //debugging
-private:
-	double base;
-	double current;
-	double max;
-	std::string label;
 };
 
 #endif
