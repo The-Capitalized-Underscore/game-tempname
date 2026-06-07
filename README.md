@@ -1,7 +1,8 @@
 # game-tempname
 
 **Code**: This project's source code is licensed under the MIT License (see [LICENSE](LICENSE.txt)).
-
+**Art**: This project's art work (within the 'assets/' directory) is licensed under the CC BY-NC 4.0 License (see [LICENSE-ART](LICENSE-ART.txt)).
+**Narrative**: Story, dialogue, and text content (within the 'narrative/' directory) are All Rights Reserved (see [LICENSE-NARRATIVE](LICENSE-NARRATIVE.txt)).
 
 | Diagram Colors |
 |--------|
