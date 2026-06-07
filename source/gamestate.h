@@ -23,4 +23,7 @@ public:
 	void setState(GameState newState);
 };
 
+extern GameStateManager stateManager; //declares instance of GameStateManager called 'stateManager'
+
+
 #endif 

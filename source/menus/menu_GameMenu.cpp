@@ -1,8 +1,10 @@
 #include <iostream>
 #include "menu_Framework.h"
+#include "../gamestate.h"
+
+//forward declarations no longer needed. gamestate system means main.cpp has full control over looping and calling of menu functions
 
 void showInventoryMenu() {
-	bool keepGoing = true;
     Menu inventory_menu("Inventory Menu");
     inventory_menu.add("View Equipment",		[]() { /* ... */ });
     inventory_menu.add("View Supplies",			[]() { /* ... */ });
@@ -10,27 +12,22 @@ void showInventoryMenu() {
     //inventory_menu.add("",					[]() { /* ... */ });
     //inventory_menu.add("",					[]() { /* ... */ });
 	//inventory_menu.add("",					[]() { /* ... */ });
-    inventory_menu.add("Back",					[&keepGoing]() { keepGoing = false; }); //lambdas --> anonymous inline functions
+    inventory_menu.add("Back",					[]() { stateManager.setState(GameState::GAME_MENU); }); //lambdas --> anonymous inline functions
     
-	while(keepGoing) {
-		inventory_menu.run(); //run once, then check keepGoing
-	} //end while
-} //end showGameMenu
+	inventory_menu.run();
+} //end showInventoryMenu
 
 
 void showGameMenu() {
-	bool keepGoing = true;
     Menu game_menu("Game Menu");
     //game_menu.add("Explore",			[]() { /* ... */ });
     //game_menu.add("Datavault",			[]() { /* ... */ });
-    game_menu.add("Inventory",			[]() { showInventoryMenu(); });
+    game_menu.add("Inventory",			[]() { stateManager.setState(GameState::INVENTORY_MENU); });
     //game_menu.add("Harvest/Work",       []() { /* ... */ });
     //game_menu.add("Factions",			[]() { /* ... */ });
 	//game_menu.add("Party",				[]() { /* ... */ });
-    game_menu.add("Back**",               [&keepGoing]() { keepGoing = false; }); 
+    game_menu.add("Back**",               []() { stateManager.setState(GameState::MAIN_MENU); }); 
     
-	while(keepGoing) {
-		game_menu.run(); //run once, then check keepGoing
-	} //end while
+	game_menu.run();
 } //end showGameMenu
 
