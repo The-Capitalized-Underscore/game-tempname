@@ -1,5 +1,8 @@
 # game-tempname
 
+**Code**: This project's source code is licensed under the MIT License (see [LICENSE](LICENSE)).
+
+
 | Diagram Colors |
 |--------|
 | Violet: view info |
