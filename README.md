@@ -1,6 +1,6 @@
 # game-tempname
 
-**Code**: This project's source code is licensed under the MIT License (see [LICENSE](LICENSE)).
+**Code**: This project's source code is licensed under the MIT License (see [LICENSE](LICENSE.txt)).
 
 
 | Diagram Colors |
