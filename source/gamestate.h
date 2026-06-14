@@ -14,7 +14,7 @@ enum class GameState {
 class GameStateManager {
 private:
 	GameState currentState;
-	
+
 public:
 	GameStateManager();
 	

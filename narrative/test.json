@@ -1,0 +1,21 @@
+{
+	"narr_the-cusp": {
+		"text": "test",
+		"world_states": {
+			"player_arrived": true
+		},
+		"faction_scores": {
+			"boat_captains": 90
+		},
+		"paths": {
+			"text": "next_poi",
+			"other_text": "next_poi2",
+		},
+		"items": [
+			"sword A",
+			"sword B",
+			"pickaxe"
+		],
+	}
+}
+
